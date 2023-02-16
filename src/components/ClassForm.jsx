@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/form.css';
+
 export class ClassForm extends React.Component {
   constructor() {
     super();
@@ -29,7 +31,7 @@ export class ClassForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={ this.handleSubmitForm }>
+      <form className='form-container' onSubmit={ this.handleSubmitForm }>
         <label>
           Nome
           <input
@@ -55,7 +57,6 @@ export class ClassForm extends React.Component {
         </label>
 
         <label>
-          Cidade
           <select onChange={ ({target}) => this.setState({ cidade: target.value})}>
             <option value='cidade 1'>Cidade 1</option>
             <option value='cidade 2'>Cidade 2</option>
@@ -64,12 +65,12 @@ export class ClassForm extends React.Component {
         </label>
 
         <label>
-          Desejo receber Newsletter no meu Email
           <input
             type="checkbox"
             value={this.state.newsletter}
             onClick={() => this.setState(prev => ({ newsletter: !prev.newsletter}))}
           />
+          Desejo receber Newsletter no meu Email
         </label>
 
         <button>ENVIAR</button>

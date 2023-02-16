@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import '../styles/form.css';
+
 export const FunctionalForm = () => {
 
   const [nome, setNome] = useState('');
@@ -24,7 +26,7 @@ export const FunctionalForm = () => {
   }
 
   return (
-    <form onSubmit={ handleSubmitForm }>
+    <form className="form-container" onSubmit={ handleSubmitForm }>
         <label>
           Nome
           <input
@@ -50,7 +52,6 @@ export const FunctionalForm = () => {
         </label>
 
         <label>
-          Cidade
           <select onChange={ ({target}) => setCidade(target.value)}>
             <option value='cidade 1'>Cidade 1</option>
             <option value='cidade 2'>Cidade 2</option>
@@ -59,12 +60,12 @@ export const FunctionalForm = () => {
         </label>
 
         <label>
-          Desejo receber Newsletter no meu Email
           <input
             type="checkbox"
             value={this.state.newsletter}
             onClick={() => setNewsLetter(!newsletter)}
           />
+          Desejo receber Newsletter no meu Email
         </label>
 
         <button>ENVIAR</button>
